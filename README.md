@@ -338,9 +338,9 @@ Android 11 及更高版本支持使用 Android 调试桥 (adb) 从工作站以�
   adb pair ipaddr:port
   ```
 
-6. 提示`Enter pairing code: `时输入弹窗中的配对码，成功后会显示`Successfully paired to ...`。
+1. 提示`Enter pairing code: `时输入弹窗中的配对码，成功后会显示`Successfully paired to ...`。
 
-7. 使用无线调试下的 **IP 地址和端口**。
+2. 使用无线调试下的 **IP 地址和端口**。
 
   ```sh
   adb connect ipaddr:port
@@ -1311,13 +1311,15 @@ adb shell input text hello
 
 现在 `hello` 出现在文本框了。
 
-如果输入的是中文的话,需要在手机中安装[ADBKeyboard.apk](https://github.com/senzhk/ADBKeyBoard),详细文档见[这里](https://github.com/senzhk/ADBKeyBoard)
+如果想输入中文，可以在设备上安装 [ADBKeyBoard.apk](https://github.com/senzhk/ADBKeyBoard)，详细文档参考 [这里](https://github.com/senzhk/ADBKeyBoard)。
 
 然后执行命令:
-```
-1. 设置当前输入法为:ADBKeyBoard
+
+```sh
+# 1. 设置当前输入法为 ADBKeyBoard
 adb shell ime set com.android.adbkeyboard/.AdbIME   
-2. 输入中文
+
+# 2. 输入中文
 adb shell am broadcast -a ADB_INPUT_TEXT --es msg '你好'
 ```
 
@@ -2286,8 +2288,7 @@ date -s 20160823.131500
 命令：
 
 ```sh
-adb reboot
-```
+adb reUKEY30
 
 ### 检测设备是否已 root
 

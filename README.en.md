@@ -1,6 +1,5 @@
 # ![Awesome Adb](./assets/title.png)
 
-The [Android Debug Bridge](https://developer.android.com/studio/command-line/adb.html) (ADB) is a toolkit included in the Android SDK package, it is not only a powerful tool for Android developers and testers, but also a good toy for Android fans.
 
 This repository renews continually, Pull Requests and Issues are welcomed. If you found [this](https://github.com/mzlogin/awesome-adb) is useful, you can star it and conveniently back here to view when necessary.
 
@@ -1291,7 +1290,19 @@ command:
 adb shell input text hello
 ```
 
-`Hello` now appear in the text box.
+`hello` now appear in the text box.
+
+If you want to input Chinese, you can install [ADBKeyBoard.apk](https://github.com/senzhk/ADBKeyBoard), detailed documentation refer to [here](https://github.com/senzhk/ADBKeyBoard).
+
+Then execute the commands:
+
+```sh
+# 1. Set the current input method to ADBKeyBoard
+adb shell ime set com.android.adbkeyboard/.AdbIME   
+
+# 2. Input Chinese
+adb shell am broadcast -a ADB_INPUT_TEXT --es msg '你好'
+```
 
 ## View Log
 
@@ -2212,10 +2223,8 @@ Example output:
 > because of too many items in the file, it can be focused on `ConfigKey`-- WiFi name and `PreSharedKey` -- WiFi password.
 
 ```xml
-<string name="ConfigKey">&quot;Wi-Fi&quot;WPA_PSK</string>
-<string name="PreSharedKey">&quot;931907334&quot;</string>
+<string name="ConfigKey">&quot;Wi-Fi&quot;WPA_PSK</string><string name="PreSharedKey">&quot;931907334&quot;</string>
 ```
-
 
 ### To set the system date and time
 
